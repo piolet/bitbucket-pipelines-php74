@@ -51,9 +51,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     rm /var/lib/mysql/ib_logfile*
 
 # Ensure UTF-8
-ENV LANG       en_US.UTF-8
-ENV LC_ALL     en_US.UTF-8
-RUN locale-gen en_US.UTF-8
+ENV LANG       fr_FR.UTF-8
+ENV LC_ALL     fr_FR.UTF-8
+RUN locale-gen fr_FR.UTF-8
 
 # Timezone & memory limit
 RUN echo "date.timezone=Europe/Paris" > /etc/php/7.4/cli/conf.d/date_timezone.ini && echo "memory_limit=1G" >> /etc/php/7.4/apache2/php.ini
