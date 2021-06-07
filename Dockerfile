@@ -41,8 +41,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     yarn \
-    php7.4-mysql php7.4-zip php7.4-xml php7.4-mbstring php7.4-curl php7.4-json php7.4-pdo php7.4-tokenizer php7.4-cli php7.4-imap php7.4-intl php7.4-gd php7.4-xdebug php7.4-soap \
-    apache2 libapache2-mod-php7.4 \
+    php8.0-mysql php8.0-zip php8.0-xml php8.0-mbstring php8.0-curl php8.0-json php8.0-pdo php8.0-tokenizer php8.0-cli php8.0-imap php8.0-intl php8.0-gd php8.0-xdebug php8.0-soap \
+    apache2 libapache2-mod-php8.0 \
     --no-install-recommends && \
     apt-get clean -y && \
     apt-get autoremove -y && \
@@ -56,7 +56,7 @@ ENV LC_ALL     fr_FR.UTF-8
 RUN locale-gen fr_FR.UTF-8
 
 # Timezone & memory limit
-RUN echo "date.timezone=Europe/Paris" > /etc/php/7.4/cli/conf.d/date_timezone.ini && echo "memory_limit=1G" >> /etc/php/7.4/apache2/php.ini
+RUN echo "date.timezone=Europe/Paris" > /etc/php/8.0/cli/conf.d/date_timezone.ini && echo "memory_limit=1G" >> /etc/php/8.0/apache2/php.ini
 
 # Goto temporary directory.
 WORKDIR /tmp
